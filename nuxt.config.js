@@ -43,7 +43,7 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ['@aceforth/nuxt-optimized-images'],
+  buildModules: ['@aceforth/nuxt-optimized-images', '@nuxtjs/moment'],
   /*
    ** Nuxt.js modules
    */
@@ -51,12 +51,16 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/apollo',
+    '@nuxtjs/markdownit',
   ],
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
   axios: {},
+  markdownit: {
+    injected: true,
+  },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/

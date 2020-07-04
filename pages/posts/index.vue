@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <div class="posts-index">
     <!-- Search input to filters posts -->
-    <form class="">
+    <!-- <form class="">
       <input class="" v-model="query" type="search" placeholder="Search..." />
-    </form>
+    </form> -->
 
     <!-- post cards -->
     <PostsList v-bind:posts="filteredList" />
@@ -49,3 +49,14 @@ export default {
   },
 }
 </script>
+
+<style>
+.posts-index {
+  margin: 1rem 7rem;
+}
+@media screen and (max-width: 800px) {
+  .posts-index {
+    margin: 1rem 4rem;
+  }
+}
+</style>

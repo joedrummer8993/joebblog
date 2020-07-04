@@ -1,16 +1,15 @@
 <template>
-  <div>
-    <a class="" @click="$router.go(-1)">go back</a>
+  <div class="container">
+    <!-- <a class @click="$router.go(-1)">go back</a> -->
 
-    <div uk-grid>
-      <div class="">
-        <h3 class="">{{ post.title }}</h3>
-        <img
+    <div class="post">
+      <h3>{{ post.title }}</h3>
+      <!-- <div v-text="$moment(post.posted)"></div> -->
+      <!-- <img
           style="width: 80vw; height: auto;"
           :src="'http://localhost:1337' + post.cover.url"
-        />
-        <p>{{ post.body }}</p>
-      </div>
+        />-->
+      <div class="md" v-html="$md.render(post.body)"></div>
     </div>
   </div>
 </template>
@@ -35,3 +34,24 @@ export default {
   },
 }
 </script>
+
+<style>
+.md p {
+  margin: 2rem 0;
+}
+.md blockquote {
+  margin-left: 2rem;
+}
+.container {
+  display: flex;
+  justify-content: center;
+}
+.post {
+  margin: 2rem 7rem;
+}
+@media screen and (max-width: 800px) {
+  .post {
+    margin: 2rem 4rem;
+  }
+}
+</style>

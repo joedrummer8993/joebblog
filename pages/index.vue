@@ -10,8 +10,14 @@
     <section class="hero">
       <div class="image">
         <picture class="image-img">
-          <source :srcSet="require('~/assets/_CEB1634.jpg?webp')" type="image/webp" />
-          <source :srcSet="require('~/assets/_CEB1634.jpg')" type="image/jpeg" />
+          <source
+            :srcSet="require('~/assets/_CEB1634.jpg?webp')"
+            type="image/webp"
+          />
+          <source
+            :srcSet="require('~/assets/_CEB1634.jpg')"
+            type="image/jpeg"
+          />
           <img class="image-img" :src="require('~/assets/_CEB1634.jpg')" />
         </picture>
       </div>
@@ -19,16 +25,19 @@
     <section class="hero-text">
       <p>
         A valued human
-        <span>(like you)</span> loving life with my wife
-        <span>(Abby)</span> and daughter
-        <span>(Millie)</span>, working as a Product Manager for
-        <a
-          href="https://www.epartsservices.com"
-          target="_blank"
-        >eParts Services</a>, and drumming for
-        <a href="http://www.cityreformed.org/" target="_blank">City Reformed</a> and
+        <span>(like you)</span> loving life with my wife <span>(Abby)</span> and
+        daughter <span>(Millie)</span>, working as a Product Manager for
+        <a href="https://www.epartsservices.com" target="_blank"
+          >eParts Services</a
+        >, and drumming for
+        <a href="http://www.cityreformed.org/" target="_blank">City Reformed</a>
+        and
         <a href="http://www.danielsnoke.com/" target="_blank">Daniel Snoke</a>.
       </p>
+    </section>
+    <section class="posts">
+      <h2>Recent Thoughts</h2>
+      <GetPosts isSearch="false" />
     </section>
     <!-- <div class="content">
       <div>
@@ -65,6 +74,7 @@ export default {}
     'left-gutter hero text sidebar'
     'left-gutter footer footer sidebar';
   gap: 2rem;
+  margin-bottom: 2rem;
 }
 .hero {
   grid-area: hero;
@@ -157,6 +167,13 @@ export default {}
   border-radius: 50%;
   background: #526488;
 }
+.posts {
+  grid-area: footer;
+}
+.posts h2 {
+  margin-bottom: 2rem;
+  color: var(--primary);
+}
 @media screen and (max-width: 800px) {
   .container {
     /* width: 95vw; */
@@ -174,6 +191,10 @@ export default {}
       'left-gutter text sidebar'
       'left-gutter footer sidebar';
     gap: 2rem;
+    margin-bottom: 2rem;
+  }
+  .title {
+    max-height: 5rem;
   }
   .hero-text {
     margin: 0;
