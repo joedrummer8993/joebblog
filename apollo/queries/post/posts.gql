@@ -1,6 +1,7 @@
 query posts {
   posts {
     id
+    Slug
     title
     Preview
     cover {

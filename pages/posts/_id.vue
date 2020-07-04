@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="post-container">
     <!-- <a class @click="$router.go(-1)">go back</a> -->
 
     <div class="post">
@@ -42,7 +42,7 @@ export default {
 .md blockquote {
   margin-left: 2rem;
 }
-.container {
+.post-container {
   display: flex;
   justify-content: center;
 }

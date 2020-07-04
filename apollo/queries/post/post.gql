@@ -2,6 +2,7 @@ query Post($id: ID!) {
   post(id: $id) {
     id
     title
+    Slug
     posted
     last_edit
     Preview
