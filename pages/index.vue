@@ -1,10 +1,10 @@
 <template>
   <div class="container">
     <section class="contact">
-      <div></div>
+      <!-- <div></div> -->
     </section>
     <div class="title">
-      <span>The Reformable thoughts of</span>
+      <span>The reformable thoughts of</span>
       <h1 class>Joe Benscoter</h1>
     </div>
     <section class="hero">
@@ -19,9 +19,15 @@
     <section class="hero-text">
       <p>
         A valued human
-        <span>(like you)</span> working as a Product Manager for eParts Services, drumming for City Reformed, and loving life with my wife
+        <span>(like you)</span> loving life with my wife
         <span>(Abby)</span> and daughter
-        <span>(Millie)</span>.
+        <span>(Millie)</span>, working as a Product Manager for
+        <a
+          href="https://www.epartsservices.com"
+          target="_blank"
+        >eParts Services</a>, and drumming for
+        <a href="http://www.cityreformed.org/" target="_blank">City Reformed</a> and
+        <a href="http://www.danielsnoke.com/" target="_blank">Daniel Snoke</a>.
       </p>
     </section>
     <!-- <div class="content">
@@ -51,8 +57,6 @@ export default {}
   /* height: 90vh; */
   /* margin: 2vh 1vw; */
   /* outline: 6px solid rgb(48, 41, 47); */
-  background: #0c1010;
-  color: white;
   display: grid;
   grid-template-rows: 2rem 2fr 2fr 1fr;
   grid-template-columns: 5rem 1fr 1fr 5rem;
@@ -69,11 +73,12 @@ export default {}
   grid-column: 1 / 3;
   grid-row: 2;
   z-index: 2;
-  background-color: rgb(212, 245, 245);
+  background-color: var(--primary);
   max-height: 8rem;
-  max-width: 33rem;
+  width: calc(100% - 10vw);
+  max-width: 450px;
   margin-top: 0.5rem;
-  padding: 2rem 3rem;
+  padding: 2rem 2rem;
   display: flex;
   flex-flow: column;
   align-items: flex-start;
@@ -83,12 +88,13 @@ export default {}
   box-shadow: 1px 1px 1px 0px rgba(0, 0, 0, 0.05);
 }
 .title span {
-  color: rgb(48, 41, 47);
+  color: var(--primary-contrast);
   font-size: 1rem;
 }
 .title h1 {
-  color: rgb(48, 41, 47);
+  color: var(--primary-contrast);
   font-size: 4rem;
+  font-size: calc(100% + 2vw);
   line-height: 0.9;
 }
 .hero-text {
@@ -97,7 +103,7 @@ export default {}
   justify-content: center;
   align-items: center;
   font-weight: 700;
-  font-size: 1.5rem;
+  font-size: calc(1rem + 0.5vw);
   margin: 0 2rem;
 }
 .hero-text span {
@@ -150,5 +156,30 @@ export default {}
   height: 2rem;
   border-radius: 50%;
   background: #526488;
+}
+@media screen and (max-width: 800px) {
+  .container {
+    /* width: 95vw; */
+    /* height: 90vh; */
+    /* margin: 2vh 1vw; */
+    /* outline: 6px solid rgb(48, 41, 47); */
+    background: #0c1010;
+    color: white;
+    display: grid;
+    grid-template-rows: 2rem 0.5fr 0.5fr 1fr;
+    grid-template-columns: 2rem 1fr 3rem;
+    grid-template-areas:
+      'left-gutter header sidebar'
+      'left-gutter hero sidebar'
+      'left-gutter text sidebar'
+      'left-gutter footer sidebar';
+    gap: 2rem;
+  }
+  .hero-text {
+    margin: 0;
+  }
+  .contact {
+    right: 0.5rem;
+  }
 }
 </style>

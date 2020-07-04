@@ -6,6 +6,13 @@
 </template>
 
 <style>
+:root {
+  --body: #0c1010;
+  --body-contrast: white;
+  --body-links: rgb(212, 245, 245);
+  --primary: rgb(212, 245, 245);
+  --primary-contrast: rgb(48, 41, 47);
+}
 @font-face {
   font-family: 'RadioGrotesk';
   src: url('~static/fonts/RadioGrotesk-Regular.otf');
@@ -29,7 +36,29 @@ html {
   box-sizing: border-box;
   margin: 0;
 }
-
+body {
+  background: var(--body);
+  color: var(--body-contrast);
+}
+a {
+  color: var(--body-links);
+  white-space: nowrap;
+  text-decoration: none;
+  position: relative;
+}
+a:before {
+  content: '';
+  background: var(--primary);
+  width: 100%;
+  height: 0.25rem;
+  position: absolute;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0.2;
+}
+a:hover:before {
+  opacity: 0.3;
+}
 .button--green {
   display: inline-block;
   border-radius: 4px;
